@@ -221,7 +221,6 @@ void colored_gradient(sil::Image& image){
             float temp= x/static_cast<float>(image.width());
             image.pixel(x, y).r = temp;
             image.pixel(x, y).b = 1-temp;
-            //image.pixel(x, y).g = x/static_cast<float>(image.width());
         }
     }
 }
@@ -342,10 +341,4 @@ int main()
         colored_gradient(image);
         image.save("output/colored_gradient.png");
     }
-
-    //{ //vortex
-      //  sil::Image rafou{"/images/rafou.jpg"};
-        //vortex(rafou);
-        //rafou.save("output/vortex.png");
-    //}
 }
