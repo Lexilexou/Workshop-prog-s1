@@ -39,6 +39,18 @@
 
 J'ai eu un petit problème avec la rotation, puisque mon image était inversée avant d'être à 90°, ce qui me donnait quelque chose comme ça:
 
+![mimi](/output/failed_rotation.png)
+
+Mon programme ne fonctionnait pas car mes pixels de coordonnées x=y ne changeaient pas de place. J'ai donc transformé mon code passant de cette version:
+
+```cpp
+image.pixel(y,x)=seb.pixel(x,y);
+
+à celle-ci:
+
+```cpp
+image.pixel(image.height()-y-1,x)=seb.pixel(x,y);
+
 **RGB split**
 
 ![mimi](/output/rgb_split.png)
