@@ -1,3 +1,3 @@
 # 🐣 S1 | Prog: Workshop
 
-test
+Exos 1 etoile:
