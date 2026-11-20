@@ -45,11 +45,13 @@ Mon programme ne fonctionnait pas car mes pixels de coordonnées x=y ne changeai
 
 ```cpp
 image.pixel(y,x)=seb.pixel(x,y);
+```
 
 à celle-ci:
 
 ```cpp
 image.pixel(image.height()-y-1,x)=seb.pixel(x,y);
+```
 
 **RGB split**
 
