@@ -75,7 +75,7 @@ void rotation(sil::Image& image){
     sil::Image seb {"images/photo.jpg"};
     for(int x=0; x<image.width(); x++){
         for(int y=0; y<image.height(); y++){
-            image.pixel(image.height()-y-1,x)=seb.pixel(x,y);
+            image.pixel(y,x)=seb.pixel(x,y);
         }
     }
 }
@@ -226,20 +226,6 @@ void colored_gradient(sil::Image& image){
     }
 }
 
-glm::vec2 rotated(glm::vec2 point, glm::vec2 center_of_rotation, float angle)
-{
-    return glm::vec2{glm::rotate(glm::mat3{1.f}, angle) * glm::vec3{point - center_of_rotation, 0.f}} + center_of_rotation;
-}
-
-void vortex(sil::Image& image){
-    glm::vec2 center = image.pixel(image.width()/2,image.height()/2);
-    float const pi = 2*acos(0.0);
-    for(int x=0; x<image.width()-1; x++){
-        for(int y=0; y<image.height()-1; y++){
-            rotated(image.pixel(x,y),center,pi*glm::distance(0,x));
-        }
-    }
-}
 
 int main()
 {
